@@ -12,7 +12,7 @@ func falar(s string) {
 	}
 }
 
-func main() {
+func main1() {
 	go falar("ola")
 	go falar("tudo bem")
 }
