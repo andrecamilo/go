@@ -1,7 +1,7 @@
-package main5
+package main
 
 // Repository pattern example - usage in main function
-func main5() {
+func main() {
 	projectsRepo := inmem.ProjectRepository{}
 	newProject, _ := projectsRepo.Store(
 		project.Project{

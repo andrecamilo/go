@@ -1,11 +1,10 @@
-package main5
-
 // Repository pattern example - repository interface
+package repo
 type Project struct {
     ID   int64
     Name string
 }
-type Repository interface {
+type IRepository interface {
     FindAll() ([]Project, error)
     Store(Project) (Project, error)
     Delete(Project) error

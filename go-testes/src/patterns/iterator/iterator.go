@@ -1,4 +1,4 @@
-package main4
+package main
 
 import (
 	"errors"
@@ -22,7 +22,7 @@ func (t *Iterator) Next() (int, string, error) {
 	return t.position, t.tasks[t.position-1], nil
 }
 
-func main4() {
+func main() {
 	tasks := task.GetExamples()
 	for {
 		i, t, err := tasks.Next()

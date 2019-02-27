@@ -1,8 +1,8 @@
-package main3
+package main
 
 import "os"
 
-func main3() {
+func main() {
 	// Get user preference for writer
 	kind := "mywriter"
 	if len(os.Args) > 1 && os.Args[1] == "stderr" {

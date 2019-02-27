@@ -1,4 +1,4 @@
-package main1
+package main
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func main1() {
+func main() {
 	http.HandleFunc("/", helloEndpoint)
 	http.HandleFunc("/logged", logDecorator(helloEndpoint))
 	_ = http.ListenAndServe(":8080", nil)

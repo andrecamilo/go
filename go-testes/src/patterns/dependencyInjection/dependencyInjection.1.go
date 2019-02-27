@@ -1,4 +1,4 @@
-package main21
+package main
 
 import (
 	"io"
@@ -6,7 +6,7 @@ import (
 )
 
 // Creational: Dependency Injection (Setter) pattern
-func main21() {
+func main() {
 	s := NewMyService()
 	s.SetWriter(os.Stderr)
 	s.WriteHello("world")

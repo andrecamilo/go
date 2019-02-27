@@ -1,4 +1,4 @@
-package main2
+package main
 
 import (
 	"fmt"
@@ -8,8 +8,7 @@ import (
 
 // Creational: Dependency Injection (Constructor) pattern
 
-
-func main2() {
+func main() {
 	s := NewMyService(os.Stderr)
 	s.WriteHello("world")
 }
