@@ -27,6 +27,8 @@ func main() {
 		return
 	}
 
+	defer ln.Close()
+
 	for {
 
 		conn, err := ln.Accept()
@@ -36,18 +38,33 @@ func main() {
 			return
 		}
 
-		//handleConnection(conn)
+		go handleConnection(conn)
+
+	}
+}
+
+func handleConnection(conn net.Conn) {
+
+	i := 0
+
+	for {
 
 		message, _ := bufio.NewReader(conn).ReadString('\n')
+
+		if message == "" {
+			i++
+		} else {
+			i = 0
+		}
+
 		fmt.Print("Message Received:", string(message))
 		newmessage := strings.ToUpper(message)
 		conn.Write([]byte(newmessage + "\n"))
 
-		conn.Close()
+		if i > 3 {
+			break
+		}
 	}
+
+	conn.Close()
 }
-
-// func handleConnection(conn net.Conn) {
-
-// 	conn.Close()
-// }
