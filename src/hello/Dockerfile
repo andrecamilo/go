@@ -1,3 +1,3 @@
-FROM scratch
-COPY ./hello /hello
+FROM golang
+COPY . /hello
 ENTRYPOINT ["/hello"]
