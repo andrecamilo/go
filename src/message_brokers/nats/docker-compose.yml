@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  nats:
+    image: nats:latest
+    container_name: nats
+    restart: always
+    ports:
+      - "8222:8222"
+      - "6222:6222"
+      - "4222:4222"
+    hostname: nats-server
+
+  # server:
+  #   build:
+  #     context: "./server"
+  #   entrypoint: /server/server
+  #   links:
+  #     - nats
+  #   environment:
+  #     - "NATS_URI=nats://nats:4222"
+  #   depends_on:
+  #     - nats
+  #   ports:
+  #     - "8080:8080"
+
+  # worker:
+  #   build:
+  #     context: "./worker"
+  #   entrypoint: /worker/worker
+  #   links:
+  #     - nats
+  #   environment:
+  #     - "NATS_URI=nats://nats:4222"
+  #   depends_on:
+  #     - nats
+  #   ports:
+  #     - "8181:8181"
